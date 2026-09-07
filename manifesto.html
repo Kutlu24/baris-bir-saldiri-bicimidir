@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manifesto - Barış Bir Saldırı Biçimidir</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bgVideo">
+            <source src="videos/your-peace-video.mp4" type="video/mp4">
+            Tarayıcınız video etiketini desteklemiyor.
+        </video>
+        <div class="overlay"></div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html"><i class="fas fa-peace"></i> Barış</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="manifesto.html" class="active">Manifesto</a></li>
+                <li><a href="#nasil-katilirim">Nasıl Katılırım?</a></li>
+                <li><a href="#arsiv">Barış Saldırıları Arşivi</a></li>
+                <li><a href="#kendi-saldirini-baslat">Kendi Saldırını Başlat</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="manifesto-section">
+        <div class="manifesto-content">
+            <h2>✊ Barış Saldırıları Manifestosu</h2>
+            <p class="intro-text">Bu bir fikir değil. Bu bir eylemdir.</p>
+            <p>Bizler, çatışmanın kader olmadığını, savaşın kaçınılmaz olmadığını, düşmanlığın sonsuz sürmeyeceğini biliyoruz.</p>
+            <p><strong>Barış edilgen değildir. Barış bir direnç biçimidir. Bir saldırı yöntemidir.</strong></p>
+            <p>Ve biz, bu yöntemi silah gibi kullanmaya kararlıyız.</p>
+
+            <h3>Neye İnanıyoruz?</h3>
+            <ul>
+                <li>Barış, edilgenliğin değil, **cesaretin** işaretidir.</li>
+                <li>Barış arayan taraf, zayıf değil; daha **ileri görüşlü, daha güçlü** olandır.</li>
+                <li>Düşmanlık, alışkanlıkla büyür; biz bu zinciri kırmak için buradayız.</li>
+                <li>Bir taraf gerçek barış için harekete geçtiğinde, diğer tarafın savaş bahanesi kalmaz.</li>
+                <li>Uzlaşmayı reddedenler, **barış saldırılarıyla yalnızlaştırılır.**</li>
+                <li>Sessiz kalmak taraf olmaktır. Biz tarafız: **barışın tarafı.**</li>
+            </ul>
+
+            <h3>Ne Yapıyoruz?</h3>
+            <p>Biz, saldırı dilini değiştiriyoruz.</p>
+            <ul>
+                <li>**Diplomasiyle saldırıyoruz.**</li>
+                <li>**Empatiyle saldırıyoruz.**</li>
+                <li>**Yardımla, kültürle, açıklıkla saldırıyoruz.**</li>
+            </ul>
+            <p>Savaşın mantığını çökertene kadar geri adım atmayacağız.</p>
+
+            <h3>Barış Saldırısı Nedir?</h3>
+            <ul>
+                <li>Tek taraflı iyilik göstergeleri</li>
+                <li>Her fırsatta diyalog çağrısı</li>
+                <li>Kültürel iş birlikleri</li>
+                <li>Ortak insani değerlerin vurgulanması</li>
+                <li>Sınırları aşan dayanışma</li>
+                <li>Tüm bunların stratejik, bilinçli ve ısrarlı olarak yürütülmesi</li>
+            </ul>
+
+            <h3>Biz Kimiz?</h3>
+            <p>Biz, "barış olsun" diyenlerden değiliz.</p>
+            <p>Biz, **barış olsun diye saldıranlarız.**</p>
+            <p>Biz, zalimliğe karşı sessiz barışı değil, **adaletli ve kararlı barışı savunuyoruz.**</p>
+            <p>Ve biliyoruz ki bu dünya, bir taraf barışta ısrar ettiği sürece değişebilir.</p>
+
+            <div class="manifesto-cta">
+                <p>Barış bir eylemdir. Bekleme. Saldır.</p>
+                <a href="index.html#kendi-saldirini-baslat" class="manifesto-action-btn">Şimdi Barış Saldırısı Başlat <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <p class="website-link">PeaceAttacks.com</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Barış Bir Saldırı Biçimidir. Tüm Hakları Saklıdır.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        const navSlide = () => {
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+
+            burger.addEventListener('click', () => {
+                nav.classList.toggle('nav-active');
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+                burger.classList.toggle('toggle');
+            });
+        }
+        navSlide();
+    </script>
+</body>
+</html>

@@ -1,0 +1,550 @@
+/* Genel Ayarlar ve Fontlar */
+:root {
+    --primary-color: #4CAF50; /* Canlı Yeşil - Barış ve Harekete Geç */
+    --secondary-color: #2196F3; /* Mavi - Vurgu ve İletişim */
+    --accent-color: #FFC107; /* Sarı - Dikkat Çekici */
+    --dark-overlay: rgba(0, 0, 0, 0.65); /* Yarı saydam siyah katman */
+    --text-color-light: #ffffff;
+    --text-color-dark: #333333;
+    --bg-gradient: linear-gradient(135deg, rgba(76, 175, 80, 0.8), rgba(33, 150, 243, 0.8)); /* CTA üzerine gradyan */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color-light);
+    overflow-x: hidden; /* Yatay kaydırmayı engeller */
+}
+
+/* Arka Plan Videosu */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.video-background video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark-overlay);
+    z-index: -1;
+}
+
+/* Header ve Navigasyon */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.2); /* Daha hafif bir arka plan */
+    padding: 20px 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+    background: var(--primary-color);
+}
+
+/* Burger Menü (Mobil) */
+.burger {
+    display: none; /* Masaüstünde gizli */
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color-light);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 5.5em; /* Daha büyük başlık */
+    margin-bottom: 25px;
+    line-height: 1.1;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Gradyan renkli başlık */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.hero-section p {
+    font-size: 1.7em;
+    margin-bottom: 50px;
+    max-width: 800px;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    font-weight: 400;
+}
+
+.call-to-action-btn {
+    background: var(--primary-color); /* Düz renk */
+    color: var(--text-color-light);
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.4em;
+    font-weight: 700;
+    border-radius: 50px; /* Yuvarlak kenarlı */
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.call-to-action-btn:hover {
+    background: var(--bg-gradient); /* Hover'da gradyan */
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+.call-to-action-btn i {
+    transition: transform 0.3s ease;
+}
+
+.call-to-action-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.4);
+    font-size: 1em;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: var(--text-color-light);
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+/* Mobil Uyum */
+@media (max-width: 900px) {
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        height: 100vh;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 60%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        padding-top: 100px;
+    }
+
+    .nav-links li {
+        opacity: 0;
+        margin: 25px 0;
+    }
+
+    .burger {
+        display: block; /* Mobil görünümde burger menüyü göster */
+    }
+
+    .hero-section h1 {
+        font-size: 3.5em;
+    }
+
+    .hero-section p {
+        font-size: 1.3em;
+        max-width: 90%;
+    }
+
+    .call-to-action-btn {
+        font-size: 1.2em;
+        padding: 15px 30px;
+    }
+}
+
+/* Nav Active Class */
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* Burger Animasyonu */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+/* Manifesto Sayfası Özellikleri */
+.manifesto-section {
+    padding: 120px 5% 80px; /* Header'dan sonra başlaması için üst boşluk */
+    position: relative;
+    z-index: 1;
+    min-height: 100vh; /* En az ekran yüksekliği kadar olması için */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* İçeriğin üstten başlaması için */
+}
+
+.manifesto-content {
+    background-color: rgba(0, 0, 0, 0.7); /* Yarı saydam siyah arka plan */
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 900px; /* Okunabilirliği artırmak için maksimum genişlik */
+    margin: 0 auto;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    color: var(--text-color-light);
+    line-height: 1.8;
+}
+
+.manifesto-content h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3em;
+    color: var(--primary-color); /* Başlık rengi */
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.manifesto-content h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em;
+    color: var(--secondary-color); /* Alt başlık rengi */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    display: inline-block; /* Çizginin sadece metin kadar olması için */
+}
+
+.manifesto-content p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.manifesto-content .intro-text {
+    font-size: 1.5em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--accent-color);
+}
+
+.manifesto-content ul {
+    list-style: none; /* Varsayılan madde işaretini kaldır */
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.manifesto-content ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.manifesto-content ul li::before {
+    content: '\2713'; /* Tik işareti (check mark) */
+    font-family: "Font Awesome 5 Free"; /* Font Awesome kullanıyorsanız */
+    font-weight: 900;
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+}
+
+.manifesto-content strong {
+    color: var(--accent-color); /* Vurgulu kelimelerin rengi */
+}
+
+.manifesto-cta {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.3);
+    padding-top: 30px;
+}
+
+.manifesto-cta p {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.manifesto-action-btn {
+    background: var(--primary-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 15px 35px;
+    font-size: 1.3em;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: inline-flex; /* Text ve ikonun yan yana gelmesi için */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none; /* Linkin alt çizgisini kaldır */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.manifesto-action-btn:hover {
+    background: var(--bg-gradient);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.manifesto-action-btn i {
+    transition: transform 0.3s ease;
+}
+
+.manifesto-action-btn:hover i {
+    transform: translateX(5px);
+}
+
+.website-link {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--secondary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobil uyumluluk için manifesto sayfası */
+@media (max-width: 768px) {
+    .manifesto-section {
+        padding: 100px 5% 60px;
+    }
+
+    .manifesto-content {
+        padding: 25px;
+    }
+
+    .manifesto-content h2 {
+        font-size: 2.2em;
+    }
+
+    .manifesto-content h3 {
+        font-size: 1.5em;
+    }
+
+    .manifesto-content p, .manifesto-content ul li {
+        font-size: 1em;
+    }
+
+    .manifesto-content .intro-text, .manifesto-cta p {
+        font-size: 1.2em;
+    }
+
+    .manifesto-action-btn {
+        font-size: 1.1em;
+        padding: 12px 25px;
+    }
+}
+/* Kampanya Giriş Bölümü */
+.campaign-intro {
+    background-color: var(--dark-overlay); /* Daha az opak bir arka plan */
+    padding: 60px 5%;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    color: var(--text-color-light);
+}
+
+.campaign-intro .container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.campaign-intro h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8em;
+    color: var(--accent-color);
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.campaign-intro p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.campaign-actions {
+    margin-top: 30px;
+}
+
+.campaign-actions p {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Mobil uyumluluk için kampanya giriş bölümü */
+@media (max-width: 768px) {
+    .campaign-intro {
+        padding: 40px 5%;
+    }
+    .campaign-intro h2 {
+        font-size: 2em;
+    }
+    .campaign-intro p {
+        font-size: 1em;
+    }
+    .campaign-actions p {
+        font-size: 1.1em;
+    }
+    .btn-secondary {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}
