@@ -125,6 +125,40 @@ nav {
     background: var(--primary-color);
 }
 
+/* Language toggle (TR/EN) */
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-left: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    padding: 3px;
+}
+
+.lang-toggle button {
+    background: transparent;
+    border: none;
+    color: var(--text-color-light);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.75em;
+    letter-spacing: 0.03em;
+    padding: 5px 12px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lang-toggle button.active {
+    background: var(--primary-color);
+    color: #0a0a0a;
+}
+
+.lang-toggle button:not(.active):hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
 /* Burger Menü (Mobil) */
 .burger {
     display: none; /* Masaüstünde gizli */
@@ -260,6 +294,10 @@ footer {
 
     .burger {
         display: block; /* Mobil görünümde burger menüyü göster */
+    }
+
+    .lang-toggle {
+        margin-left: 12px;
     }
 
     .hero-section h1 {
