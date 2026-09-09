@@ -548,3 +548,161 @@ footer {
         padding: 10px 20px;
     }
 }
+
+/* Nasıl Katılırım / Arşiv / Kendi Saldırını Başlat / İletişim ortak yapı */
+.join-section, .archive-section, .start-section, .contact-section {
+    position: relative;
+    z-index: 1;
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.join-section .container, .archive-section .container,
+.start-section .container, .contact-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.join-section h2, .archive-section h2, .start-section h2, .contact-section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.6em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.join-section h2 i, .archive-section h2 i, .start-section h2 i, .contact-section h2 i {
+    color: var(--primary-color);
+    margin-right: 12px;
+}
+
+.join-intro, .archive-intro, .start-intro, .contact-section p {
+    font-size: 1.15em;
+    max-width: 720px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+/* Nasıl Katılırım - adım kartları */
+.join-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    text-align: left;
+}
+
+.join-step {
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 10px;
+    padding: 25px;
+    border-top: 3px solid var(--primary-color);
+}
+
+.join-step-num {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6em;
+    font-weight: 800;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.join-step h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: var(--text-color-light);
+}
+
+.join-step p {
+    font-size: 0.98em;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Arşiv - kart ızgarası */
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    text-align: left;
+}
+
+.archive-card {
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 10px;
+    padding: 25px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.archive-card:hover {
+    transform: translateY(-4px);
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.archive-card i {
+    font-size: 1.6em;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    display: block;
+}
+
+.archive-card h3 {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: var(--text-color-light);
+}
+
+.archive-card p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Kendi Saldırını Başlat */
+.start-steps {
+    text-align: left;
+    max-width: 640px;
+    margin: 0 auto 35px;
+    list-style: none;
+    counter-reset: start-counter;
+}
+
+.start-steps li {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    counter-increment: start-counter;
+}
+
+.start-steps li::before {
+    content: counter(start-counter);
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: var(--text-color-light);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95em;
+}
+
+/* İletişim */
+.contact-section .social-icons {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .join-section, .archive-section, .start-section, .contact-section {
+        padding: 60px 5%;
+    }
+    .join-section h2, .archive-section h2, .start-section h2, .contact-section h2 {
+        font-size: 2em;
+    }
+}
