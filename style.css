@@ -205,8 +205,13 @@ nav {
 
 /* Footer */
 footer {
-    position: absolute;
-    bottom: 0;
+    /* Was position:absolute + bottom:0 with no positioned ancestor, which
+       anchors to the initial containing block (~1 viewport height) rather
+       than the true end of the document - on pages longer than one screen
+       (manifesto.html) that dropped the footer, icons included, straight
+       into the middle of the text. Normal flow puts it where it belongs:
+       after the actual content, on every page length. */
+    position: relative;
     width: 100%;
     text-align: center;
     padding: 20px 0;
